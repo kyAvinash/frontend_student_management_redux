@@ -75,10 +75,7 @@ const SchoolView = () => {
                   <li>Average Attendance: {averageAttendance.toFixed(2)}%</li>
                   <li>Average Marks: {averageMarks.toFixed(2)}</li>
                   <li>
-                    Top Student:{" "}
-                    {topStudent
-                      ? `${topStudent.name}`
-                      : "-"}
+                    Top Student: {topStudent ? `${topStudent.name}` : "-"}
                   </li>
                 </ul>
               )}
@@ -103,13 +100,17 @@ const SchoolView = () => {
                     <li key={teacher._id}>
                       Name: {teacher.name} <br />
                       Subject: {teacher.subject}
-                      <br />
                       {teacher.experience && (
-                        <span>Experience: {teacher.experience} years</span>
+                        <>
+                          <br />
+                          <span>Experience: {teacher.experience} years</span>
+                        </>
                       )}
-                      <br />
                       {teacher.qualification && (
-                        <span>Qualification: {teacher.qualification}</span>
+                        <>
+                          <br />
+                          <span>Qualification: {teacher.qualification}</span>
+                        </>
                       )}
                     </li>
                   ))}
